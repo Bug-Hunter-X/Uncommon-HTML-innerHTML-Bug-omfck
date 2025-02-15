@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+
+  <script>
+    //Incorrect way to access the innerHTML property.
+    document.getElementById('myDiv').innerHTML = document.getElementById('myDiv').innerHTML + " Added text";
+
+    //This approach will add the added text but will cause a slight performance decrease, this will work properly
+    let div = document.getElementById('myDiv');
+    div.innerHTML += " Added text";
+  </script>
+</body>
+</html>
